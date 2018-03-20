@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Weather Application</string>
+    <string name="main_enter_city">Enter a City Name (Ex : Halifax)</string>
+    <string name="btn_search">Get Weather</string>
+    <string name="humidity">Humidity</string>
+    <string name="clouds">Clouds</string>
+</resources>
