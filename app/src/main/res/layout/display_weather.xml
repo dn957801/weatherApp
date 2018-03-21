@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.dinesh.weatherapp.MainActivity">
-
-    <TextView
-        android:id="@+id/enterCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="13dp"
-        android:labelFor="@+id/inputCityName"
-        android:text="@string/main_enter_city"
-        android:textColor="@color/colorBlack" />
-
-    <EditText
-        android:id="@+id/inputCityName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/enterCity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10sp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="e.g    Halifax"/>
-
-    <Button
-        android:id="@+id/btnSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputCityName"
-        android:layout_centerHorizontal="true"
-        android:text="@string/btn_search" />
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/CityName"
@@ -42,16 +10,15 @@
         android:layout_above="@+id/temperature"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="22dp"
-        android:ems="10"
-        android:textSize="30dp" />
+        android:ems="10" />
 
     <TextView
         android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/minmax"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp"
+        android:layout_alignStart="@+id/CityName"
+        android:layout_marginBottom="25dp"
         android:ems="10" />
 
     <TextView
@@ -86,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/humidText"
-        android:layout_marginEnd="11dp"
+        android:layout_marginEnd="24dp"
         android:layout_toStartOf="@+id/btnSearch"
         android:ems="5" />
 
@@ -95,6 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/cloudText"
+        android:layout_marginStart="19dp"
         android:layout_toEndOf="@+id/btnSearch"
         android:ems="5" />
 
@@ -115,8 +83,5 @@
         android:layout_marginBottom="57dp"
         android:layout_toEndOf="@+id/description"
         android:text="@string/clouds" />
-
-
-
 
 </RelativeLayout>
