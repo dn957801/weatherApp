@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#D8D8">
 
     <TextView
         android:id="@+id/CityName"
@@ -10,7 +11,8 @@
         android:layout_above="@+id/temperature"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="22dp"
-        android:ems="10" />
+        android:ems="10"
+        android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/temperature"
@@ -53,8 +55,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/humidText"
-        android:layout_marginEnd="24dp"
-        android:layout_toStartOf="@+id/btnSearch"
+        android:layout_alignStart="@+id/description"
+        android:layout_marginStart="11dp"
         android:ems="5" />
 
     <TextView
@@ -62,26 +64,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/cloudText"
-        android:layout_marginStart="19dp"
-        android:layout_toEndOf="@+id/btnSearch"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/description"
         android:ems="5" />
 
     <TextView
         android:id="@+id/humidText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cloudText"
-        android:layout_alignBottom="@+id/cloudText"
-        android:layout_toStartOf="@+id/description"
-        android:text="@string/humidity" />
+        android:layout_alignStart="@+id/description"
+        android:layout_below="@+id/clouds"
+        android:layout_marginStart="22dp"
+        android:text="@string/humidity"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <TextView
         android:id="@+id/cloudText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="57dp"
-        android:layout_toEndOf="@+id/description"
-        android:text="@string/clouds" />
+        android:layout_alignStart="@+id/clouds"
+        android:layout_marginBottom="38dp"
+        android:layout_marginStart="15dp"
+        android:text="@string/clouds"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
 </RelativeLayout>

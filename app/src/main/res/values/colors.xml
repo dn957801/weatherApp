@@ -4,5 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colormine">#D8D8</color>
     <color name="colorBlack">#000000</color>
+    <color name="Cloudy">#c8cccc</color>
+    <color name="ClearSky">#3ba4ea</color>
+    <color name="Rain">#e1c7b5</color>
 </resources>

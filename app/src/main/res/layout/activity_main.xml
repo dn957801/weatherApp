@@ -2,8 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id = "@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background = "@color/colormine"
     tools:context="com.example.dinesh.weatherapp.MainActivity">
 
     <TextView
@@ -11,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="13dp"
+        android:layout_alignParentTop="true"
         android:labelFor="@+id/inputCityName"
         android:text="@string/main_enter_city"
         android:textColor="@color/colorBlack" />
@@ -40,55 +42,70 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/temperature"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp"
+        android:layout_alignParentStart="true"
         android:ems="10"
-        android:textSize="30dp" />
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/minmax"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp"
-        android:ems="10" />
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/minmax"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/main"
-        android:layout_alignStart="@+id/temperature"
-        android:layout_marginBottom="25dp"
-        android:ems="10" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/main"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/description"
-        android:layout_alignStart="@+id/minmax"
-        android:layout_marginBottom="31dp"
-        android:ems="10" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/humidity"
-        android:layout_alignStart="@+id/main"
-        android:layout_marginBottom="38dp"
-        android:ems="10" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp"
+        android:ems="10"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/humidText"
-        android:layout_marginEnd="11dp"
-        android:layout_toStartOf="@+id/btnSearch"
-        android:ems="5" />
+        android:layout_alignStart="@+id/humidText"
+        android:ems="5"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/clouds"
@@ -96,7 +113,10 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/cloudText"
         android:layout_toEndOf="@+id/btnSearch"
-        android:ems="5" />
+        android:ems="5"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/humidText"
@@ -104,8 +124,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/cloudText"
         android:layout_alignBottom="@+id/cloudText"
-        android:layout_toStartOf="@+id/description"
-        android:text="@string/humidity" />
+        android:layout_alignStart="@+id/enterCity"
+        android:layout_marginStart="31dp"
+        android:textAlignment="center"
+        android:ems="5"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        />
 
     <TextView
         android:id="@+id/cloudText"
@@ -113,10 +138,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="57dp"
-        android:layout_toEndOf="@+id/description"
-        android:text="@string/clouds" />
-
-
-
+        android:layout_toEndOf="@+id/btnSearch"
+        android:ems="5"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
 
 </RelativeLayout>
