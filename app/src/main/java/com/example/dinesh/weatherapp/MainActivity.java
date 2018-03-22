@@ -167,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
     void set_result() {
 
+        // Temporary variable to modify texts
         String junk;
 
         // Set the city name entered
@@ -202,23 +203,6 @@ public class MainActivity extends AppCompatActivity {
         etClouds.setText(junk);
         etHumitText.setText("Humidity");
         etCloudText.setText("Clouds");
-
-        /**
-        // Display the weather icon
-        icon_url = icon_url + icon + ".png";
-        //String uri = icon_url + "/" + icon + ".png";
-        Log.i(TAG, "URI = " + icon_url);
-        try {
-            URL url = new URL(icon_url);
-            try {
-                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                etIconDetail.setImageBitmap(bmp);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }*/
     }
 
     double convertToCelcius (double temp) {
