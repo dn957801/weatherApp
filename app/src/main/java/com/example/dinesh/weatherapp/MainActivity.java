@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
 
-                Toast.makeText(getApplicationContext(), "Error retrieving data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Invalid City", Toast.LENGTH_SHORT).show();
             }
         }
         );
