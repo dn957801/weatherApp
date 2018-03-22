@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private String city, min_max;
     private Runnable runnable;
     private static final String TAG = "MyActivity";
-    String cityEntered, weather_main, weather_description, icon;
+    weatherClass obj;
+    String cityEntered, weather_main, weather_description;
     double temp=0, temp_min=0, temp_max = 0;
     int humidity=0, clouds_all;
     JSONObject main, clouds, weather_detail;
@@ -141,10 +142,9 @@ public class MainActivity extends AppCompatActivity {
                             // Reference : https://stackoverflow.com/questions/3439517/android-set-degree-symbol-to-textview
                             min_max = "Min " + (int)temp_min + (char) 0x00B0 + "C     Max " + (int)temp_max + (char) 0x00B0 +"C";
 
-                            // To display icon
-                            // Reference : https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
-                            icon = weather_detail.getString("icon");
-
+                            // Initialize class with all variables
+                            obj = new weatherClass(cityEntered, weather_main, weather_description, temp, temp_min,
+                                                                temp_max, humidity, clouds_all);
                             set_result();
 
                         } catch (JSONException e) {
@@ -169,38 +169,53 @@ public class MainActivity extends AppCompatActivity {
 
         // Temporary variable to modify texts
         String junk;
+        int weather_info;
+
+        // get all values from class
+        String cityEntered1 = obj.getCityEntered();
 
         // Set the city name entered
-        etCityName.setText(cityEntered);
+        etCityName.setText(cityEntered1);
 
         // Set the temperature
 
         // To display degree, in all places below
         // Reference : https://stackoverflow.com/questions/3439517/android-set-degree-symbol-to-textview
-        junk = String.valueOf((int)temp) + (char) 0x00B0 + "C";
+        int temp1 = (int) obj.getTemp();
+        junk = String.valueOf(temp1) + (char) 0x00B0 + "C";
         etTemperature.setText(junk);
 
         // Set the minimum and maximum temperatures received
         etMinmax.setText(min_max);
 
-        junk = new String(String.valueOf(weather_main));
-        if(junk.equals("Clouds")) {
-            // Setting background color
+        junk = obj.getWeather_main();
+        //junk = new String(String.valueOf(weather_main));
+        if(junk.equals("Clouds") || junk.equals("Mist")) {
+            // Setting background color to Grey if cloudy or mist
             // Reference : https://stackoverflow.com/questions/15592850/setbackgroundcolorint-color-and-relativelayout
             relativeLayout.setBackgroundColor(Color.parseColor("#c8cccc"));
         } else if(junk.equals("Rain")) {
+            // Setting background color to Brown if it is raining
             relativeLayout.setBackgroundColor(Color.parseColor("#e1c7b5"));
         } else {
+            // Setting background color to Sky Blue when clear sky
             relativeLayout.setBackgroundColor(Color.parseColor("#3ba4ea"));
         }
-
         etMain.setText(junk);
-        junk = new String(String.valueOf(weather_description));
+
+
+        junk = obj.getWeather_description();
+        //junk = new String(String.valueOf(weather_description));
         etDescription.setText(junk);
-        junk = new Integer(humidity).toString() + "%";
+
+        weather_info = obj.getHumidity();
+        junk = new Integer(weather_info).toString() + "%";
         etHumidity.setText(junk);
-        junk = new Integer(clouds_all).toString() + "%";
+
+        weather_info = obj.getClouds_all();
+        junk = new Integer(weather_info).toString() + "%";
         etClouds.setText(junk);
+
         etHumitText.setText("Humidity");
         etCloudText.setText("Clouds");
     }

@@ -28,5 +28,32 @@ public class weatherClass {
         this.clouds_all = clouds_all;
     }
 
+    public String getCityEntered () {
+        return this.cityEntered;
+    }
+
+    public String getWeather_main () {
+        return this.weather_main;
+    }
+
+    public String getWeather_description () {
+        return this.weather_description;
+    }
+
+    public double getTemp () {
+        return this.temp;
+    }
+
+    public double getTemp_min () {
+        return this.temp_min;
+    }
+
+    public double getTemp_max () {
+        return this.temp_max;
+    }
+
+    public int getHumidity() {return  this.humidity; }
+
+    public int getClouds_all() {return  this.clouds_all; }
 
 }
